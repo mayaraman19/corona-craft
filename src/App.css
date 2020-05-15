@@ -1,5 +1,16 @@
 .App {
   text-align: center;
+  color: azure;
+  background-color: darkcyan;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.NavBar{
+  text-align: left;
 }
 
 .App-logo {
@@ -14,7 +25,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: lightblue;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
