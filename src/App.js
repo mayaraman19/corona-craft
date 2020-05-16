@@ -1,11 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './components/logo.svg';
 import './App.css';
-import Home from './Home'
-import Projects from './Projects'
+import Home from './components/Home'
+import Projects from './components/Projects'
 import {Route, Link} from 'react-router-dom';
-import NavBar from './NavBar'
-import About from './About';
+import NavBar from './components/NavBar'
+import About from './components/About';
 
 
 function App() {
