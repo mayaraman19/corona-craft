@@ -9,6 +9,10 @@ body {
   height: 100%;
 }
 
+.projects{
+  text-decoration-color: gainsboro;
+}
+
 .NavBar{
   text-align: left;
 }
