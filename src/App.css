@@ -2,15 +2,12 @@
   text-align: center;
   color: azure;
   background-color: darkcyan;
+  padding-bottom: 10px;
 }
 
 html,
 body {
   height: 100%;
-}
-
-.projects{
-  text-decoration-color: gainsboro;
 }
 
 .NavBar{
@@ -50,4 +47,8 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+.active {
+  color: rgb(0, 153, 255);
 }
