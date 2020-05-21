@@ -16,8 +16,8 @@ class Home extends Component{
             <div className="body">
                 <h1>Home Page</h1>
                 <Greeting/>
-                <div className='top-posts'>
-                    <TopPosts/>
+                <div className='featured-content'>
+                    <TopPosts title="Featured Posts" description="description"/>
                 </div>
             </div>
             
