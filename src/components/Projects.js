@@ -9,7 +9,7 @@ import Gardening from './Gardening'
 
 function Projects() {
     return (
-        <div>
+        <div className='project-page'>
             <h1>Some Home Crafting Projects!</h1>
             <Link to="/CreatePost"> Write a post!</Link>
             <ProjectsNavBar />

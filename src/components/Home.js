@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import TopPosts from './TopPosts'
+import TopPosts from './MiniProj'
+import MiniProj from './MiniProj';
 
 function Greeting(){
     return (
@@ -13,14 +14,15 @@ function Greeting(){
 class Home extends Component{
     render(){
         return(
-            <div className="body">
-                <h1>Home Page</h1>
-                <Greeting/>
-                <div className='featured-content'>
-                    <TopPosts title="Featured Posts" description="description"/>
+            <div>
+                <div className="home-page">
+                    <h1>Home Page</h1>
+                    <Greeting/>
                 </div>
-            </div>
-            
+                <div className='featured-content'>
+                    <MiniProj title="Featured Posts" description="description"/>
+                </div>
+            </div>            
         );
     }
 }

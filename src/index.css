@@ -27,6 +27,20 @@ ul.header li {
   margin: 0;
 }
 
+.home-page {
+  padding: 10px;
+  background-color: rgb(2, 148, 148);
+}
+
+.about-page{
+  padding: 10px;
+  background-color: rgb(2, 148, 148);
+}
+
+.project-page {
+  background-color: rgb(2, 148, 148);
+  padding: 10px;
+}
 
 ul.projects li {
   display: inline;
@@ -67,7 +81,7 @@ ul.header li a {
   display: inline-block;
 }
 .content {
-  background-color: darkcyan;
+  background-color: rgb(112, 112, 112);
   padding: 0;
 }
 .content h2 {
