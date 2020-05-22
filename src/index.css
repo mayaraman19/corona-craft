@@ -1,3 +1,4 @@
+/**
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +11,83 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+*/
+body {
+  background-color: rgb(112, 112, 112);
+  padding: 10px;
+  margin: 0;
+}
+h1, h2, p, ul, li {
+  font-family: sans-serif;
+}
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+.home-page {
+  padding: 10px;
+  background-color: rgb(2, 148, 148);
+}
+
+.about-page{
+  padding: 10px;
+  background-color: rgb(2, 148, 148);
+}
+
+.project-page {
+  background-color: rgb(2, 148, 148);
+  padding: 10px;
+}
+
+ul.projects li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+
+ul.projects {
+  background-color: rgb(2, 148, 148);
+  padding: 0;
+}
+ul.projects li a {
+  color: #FFF;
+  font-weight: lighter;
+  text-decoration: underline;
+  padding: 10px;
+  display: inline-block;
+}
+.featured-content{
+  padding: 20px;
+  background-color: rgb(112, 112, 112);
+}
+
+.content-block {
+  text-align: center;
+}
+
+ul.header {
+  background-color: rgb(2, 148, 148);
+  padding: 0;
+}
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+.content {
+  background-color: rgb(112, 112, 112);
+  padding: 0;
+}
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  margin-bottom: 10px;
 }
