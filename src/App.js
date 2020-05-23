@@ -15,8 +15,9 @@ import Form from './components/Form';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
+    <div className="App">
       <div className='content'>
         <Route exact path="/" component={Home}/>
         <div>
@@ -30,6 +31,7 @@ function App() {
         </div>
         <Route exact path="/About" component={About}/>
       </div>
+    </div>
     </div>
   );
 }

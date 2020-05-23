@@ -5,7 +5,6 @@ function Info(){
         <dev>
             <p>Developed by: Alex Ginella, Maya Raman, Damini Kaushik and Michelle Gunawan</p>
             <p>Copyright CoronaCraft 2020 LLC.</p>
-            <p>...</p>
         </dev>
     )
 }

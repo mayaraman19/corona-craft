@@ -7,7 +7,6 @@ function Greeting(){
         <div>
             <p>Hello! Welcome to CoronaCraft</p>
             <p>the site where we help you craft to survive corona</p>
-            <p> ... </p>
         </div>
     );
 }
