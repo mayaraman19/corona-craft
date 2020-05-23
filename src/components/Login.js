@@ -5,9 +5,9 @@ import {NavLink} from 'react-router-dom';
 class Login extends Component {
     render() {
         return(
-            <div>
+            <div style={styles.background}>
             <h3>Welcome to CoronaCraft!</h3>
-            <form>
+            <form style={styles.form}>
                 <label>Username</label>
                 <input />
                 <label>Password</label>
@@ -17,6 +17,14 @@ class Login extends Component {
             </div>
         );
     }
+}
+
+const styles = {
+    background: {
+        backgroundColor: 'antiquewhite',
+        textAlign: 'center',
+        borderRadius: 20,
+    },
 }
 
 export default Login;
