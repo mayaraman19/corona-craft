@@ -46,8 +46,7 @@ class Home extends Component{
                     <Greeting/>
                 </div>
                 <div className='featured-content'>
-                    {/* <MiniProj title="Featured Posts" description="description"/> */}
-                    {projs}
+                    <MiniProj title="Featured Posts" description="description"/>
                 </div>
             </div>            
         );
