@@ -30,14 +30,20 @@ class CreatePost extends React.Component {
     }
     render() {
         if (this.state.toContact === true) {
-            return <Redirect to='/' />
+            return <Redirect to='/Projects' />
         }
         return (
             <div style={style.backgroundDiv}>
+                <form 
+                    action="http://localhost:5000/projects" 
+                    method="POST"
+                    //onSubmit={() => this.submitForm}
+                >
                 <div style={style.title}><h3>Title:</h3></div>
                 <input
                     type="text"
                     placeholder="title"
+                    name="postTitle"
                     value={this.state.title}
                     onChange={this.handleTitleChange}
                 />
@@ -45,6 +51,7 @@ class CreatePost extends React.Component {
                 <input
                     type="text"
                     placeholder="start writing your post here"
+                    name="postDescription"
                     value={this.state.post}
                     onChange={this.handlePostChange}
                     style={{ width: "500px", height: "500px", textAlign: "flex-start" }}
@@ -53,10 +60,11 @@ class CreatePost extends React.Component {
                 <br></br>
                 <br></br>
                 <button
-                    onClick={this.submitForm}
+                    type="submit"
                 >
                     Submit
-            </button>
+                </button>
+                </form>
             </div>
 
         );

@@ -6,7 +6,6 @@ import {Route, Router, Switch} from 'react-router-dom';
 import Baking from './Baking'
 import Masks from './Masks'
 import Gardening from './Gardening'
-import Form from './Form';
 import CreatePost from './CreatePost';
 
 function Projects() {

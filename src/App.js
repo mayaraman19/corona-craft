@@ -10,7 +10,6 @@ import CreatePost from './components/CreatePost';
 import Baking from './components/Baking'
 import Masks from './components/Masks'
 import Gardening from './components/Gardening'
-import Form from './components/Form';
 
 
 function App() {
