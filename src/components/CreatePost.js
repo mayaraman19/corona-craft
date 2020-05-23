@@ -30,18 +30,18 @@ class CreatePost extends React.Component {
     }
     render() {
         if (this.state.toContact === true) {
-            return <Redirect to='/Projects' />
+            return <Redirect to='/' />
         }
         return (
-            <div>
-                <h3>Title:</h3>
+            <div style={style.backgroundDiv}>
+                <div style={style.title}><h3>Title:</h3></div>
                 <input
                     type="text"
                     placeholder="title"
                     value={this.state.title}
                     onChange={this.handleTitleChange}
                 />
-                <h3>Post:</h3>
+                <div style={style.title}><h3 >Post:</h3></div>
                 <input
                     type="text"
                     placeholder="start writing your post here"
@@ -63,4 +63,29 @@ class CreatePost extends React.Component {
     }
 }
 
+const style = {
+    backgroundDiv: {
+        flex: 1,
+        backgroundColor: 'antiquewhite',
+        marginTop: 15,
+        marginBottom: 15,
+        marginLeft: 230,
+        marginRight: 230,
+        paddingTop: 15,
+        paddingBottom: 15,
+        paddingLeft: 20,
+        paddingRight: 20,
+        borderRadius: 20,
+    },
+    title: {
+        backgroundColor: 'lightblue',
+        justify: 'center',
+        paddingVertical: 30,
+        marginLeft: '45%',
+        width: 60,
+        borderRadius: 10,
+    }
+}
+
 export default CreatePost;
+
