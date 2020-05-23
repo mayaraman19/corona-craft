@@ -7,6 +7,7 @@ import Baking from './Baking'
 import Masks from './Masks'
 import Gardening from './Gardening'
 import Form from './Form';
+import CreatePost from './CreatePost';
 
 function Projects() {
 
@@ -14,18 +15,10 @@ function Projects() {
         <div className='project-page'>
             <h1>Some Home Crafting Projects!</h1>
             <ul>
-            {/* <li><NavLink to="/Projects/WriteForm"> Write a Post!</NavLink></li> */}
             <NavLink to="/Projects/CreatePost" className="form"> Write a post!</NavLink>
             <ProjectsNavBar />
             </ul>
-            <div className='projects'>
-                <Switch>
-                    <Route path="/Projects/CreatePost" className="form" component={Form}/>
-                    <Route path="/Projects/Baking" component={Baking}/>
-                    <Route path="/Projects/Masks" component={Masks}/>
-                    <Route path="/Projects/Gardening" component={Gardening}/>
-                </Switch>
-            </div>
+             
         </div>
     );
 }
