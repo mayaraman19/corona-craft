@@ -13,6 +13,17 @@ code {
     monospace;
 }
 */
+
+.login{
+  background-color: darkcyan;
+  font-size: 24pt;
+  padding: 10px;
+}
+
+.textfield{
+  padding: 15px;
+}
+
 body {
   background-color: rgb(112, 112, 112);
   padding: 10px;

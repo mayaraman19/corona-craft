@@ -4,16 +4,22 @@ import {NavLink} from 'react-router-dom';
 
 class Login extends Component {
     render() {
-        return(
-            <div style={styles.background}>
-            <h3>Welcome to CoronaCraft!</h3>
-            <form style={styles.form}>
-                <label>Username</label>
-                <input />
-                <label>Password</label>
-                <input />
-            </form>
-            <NavLink to="/Home">Log in!</NavLink>
+        return( //style={styles.background} >
+            <div className="login" > 
+                <h3>Welcome to CoronaCraft!</h3>
+                <form style={styles.form}>
+                    <p>
+                        <label className="textfield">Username</label>
+                        <input/>
+                    </p>
+                    <p>
+                        <label className="textfield">Password</label>
+                        <input type="password"/>
+                    </p>
+                </form>
+                <button>
+                <NavLink to="/Home">Log in!</NavLink>
+                </button>
             </div>
         );
     }
