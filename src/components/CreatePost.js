@@ -22,7 +22,6 @@ class CreatePost extends React.Component {
     }
 
     handleTagsChange = e => {
-
     }
 
     submitForm = () => {
@@ -34,21 +33,27 @@ class CreatePost extends React.Component {
         }
         return (
             <div style={style.backgroundDiv}>
-                <form 
-                    action="http://localhost:5000/projects" 
+                <form
+                    action="http://localhost:5000/projects"
                     method="POST"
-                    //onSubmit={() => this.submitForm}
+                //onSubmit={() => this.submitForm}
                 >
-                <div style={style.title}><h3>Title:</h3></div>
-                <input
-                    type="text"
-                    placeholder="title"
-                    name="postTitle"
-                    value={this.state.title}
-                    onChange={this.handleTitleChange}
-                />
-                <div style={style.title}><h3 >Post:</h3></div>
-                <input
+                    <div style={style.title}><h3>Title:</h3></div>
+                    {/* <input
+                        type="text"
+                        placeholder="title"
+                        name="postTitle"
+                        value={this.state.title}
+                        onChange={this.handleTitleChange}
+                    /> */}
+                    <textarea
+                        placeholder="title"
+                        value={this.state.title}
+                        onChange={this.handleTitleChange}
+                        style={{ width: "500px" }}
+                    />
+                    <div style={style.title}><h3 >Post:</h3></div>
+                    {/* <input
                     type="text"
                     placeholder="start writing your post here"
                     name="postDescription"
@@ -56,13 +61,26 @@ class CreatePost extends React.Component {
                     onChange={this.handlePostChange}
                     style={{ width: "500px", height: "500px", textAlign: "flex-start" }}
 
-                />
-                <br></br>
-                <br></br>
-                <button
-                    type="submit"
-                >
-                    Submit
+                /> */}
+                    <textarea
+                        placeholder="start writing your post here"
+                        value={this.state.post}
+                        onChange={this.handlePostChange}
+                        style={{ width: "500px", height: "500px" }}
+                    />
+                    <div style={style.title}><h3 >Tags:</h3></div>
+                    <textarea
+                        placeholder="tags"
+                        value={this.state.tags}
+                        onChange={this.handleTagsChange}
+                        style={{ width: "500px" }}
+                    />
+                    <br></br>
+                    <br></br>
+                    <button
+                        type="submit"
+                    >
+                        Submit
                 </button>
                 </form>
             </div>
