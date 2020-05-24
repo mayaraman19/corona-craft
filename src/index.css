@@ -15,7 +15,8 @@ code {
 */
 
 .login{
-  background-color: darkcyan;
+  /* background-color: darkcyan; */
+  background-color: #b1e1d5;
   font-size: 24pt;
   padding: 10px;
 }
@@ -25,12 +26,14 @@ code {
 }
 
 body {
-  background-color: rgb(112, 112, 112);
+  /* background-color: rgb(112, 112, 112); */
+  background-color: #d8c0e5;
   padding: 10px;
   margin: 0;
 }
 h1, h2, p, ul, li {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: 'Pangolin', cursive;
 }
 
 .NavBar{
@@ -49,7 +52,8 @@ ul.NavBar li {
 }
 
 ul.NavBar {
-  background-color: rgb(2, 148, 148);
+  /* background-color: rgb(2, 148, 148); */
+  background-color: #b1e1d5;
   padding: 0;
 
 }
@@ -61,7 +65,9 @@ ul.NavBar li a {
   left: 0;
   width: 100%;
   */
-  color: #FFF;
+  /* color: #FFF; */
+  color: #779e95;
+  font-family: 'Pangolin', cursive;
   font-weight: bold;
   text-decoration: none;
   padding: 15px;
@@ -70,16 +76,19 @@ ul.NavBar li a {
 
 .home-page {
   padding: 10px;
-  background-color: rgb(2, 148, 148);
+  /* background-color: rgb(2, 148, 148); */
+  background-color: #b1e1d5;
 }
 
 .about-page{
   padding: 10px;
-  background-color: rgb(2, 148, 148);
+  /* background-color: rgb(2, 148, 148); */
+  background-color: #b1e1d5;
 }
 
 .project-page {
-  background-color: rgb(2, 148, 148);
+  /* background-color: rgb(2, 148, 148); */
+  background-color: #b1e1d5;
   padding: 10px;
 }
 
@@ -91,11 +100,14 @@ ul.projects li {
 
 
 ul.projects {
-  background-color: rgb(2, 148, 148);
+  /* background-color: rgb(2, 148, 148); */
+  background-color: #b1e1d5;
   padding: 0px;
 }
 ul.projects li a {
-  color: #FFF;
+  /* color: #FFF; */
+  color: #779e95;
+  font-family: 'Pangolin', cursive;
   font-weight: lighter;
   text-decoration: none;
   padding: 10px;
@@ -111,7 +123,8 @@ ul.projects li a {
 }
 
 .content {
-  background-color: rgb(112, 112, 112);
+  /* background-color: rgb(112, 112, 112); */
+  background-color: #d8c0e5;
   padding: 0;
 }
 .content h2 {
@@ -123,5 +136,6 @@ ul.projects li a {
 }
 
 .active{
-  background-color: rgb(0, 119, 119);
+  /* background-color: rgb(0, 119, 119); */
+  background-color: #b1e1d5;
 }
