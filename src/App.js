@@ -10,7 +10,7 @@ import CreatePost from './components/CreatePost';
 import Baking from './components/Baking'
 import Masks from './components/Masks'
 import Gardening from './components/Gardening'
-import Form from './components/Form';
+import Login from './components/Login';
 
 
 function App() {
@@ -19,7 +19,8 @@ function App() {
       <NavBar />
     <div className="App">
       <div className='content'>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/" component={Login}/>
+        <Route exact path="/Home" component={Home}/>
         <div>
           <Route exact path="/Projects" component={Projects}/>
           <div className='projects'>

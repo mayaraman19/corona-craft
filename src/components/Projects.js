@@ -4,7 +4,6 @@ import ProjectsNavBar from './ProjectsNavBar';
 import NavBar from './NavBar';
 import {Route, Router, Switch} from 'react-router-dom';
 
-
 function Projects() {
 
     return (
