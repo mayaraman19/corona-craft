@@ -20,6 +20,7 @@ function App() {
     <div className="App">
       <div className='content'>
         <Route exact path="/" component={Login}/>
+        <Route exact path="/Login" component={Login}/>
         <Route exact path="/Home" component={Home}/>
         <div>
           <Route exact path="/Projects" component={Projects}/>
