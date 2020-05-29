@@ -3,6 +3,7 @@ import axios from 'axios';
 import TopPosts from './MiniProj'
 import MiniProj from './MiniProj';
 
+
 function Greeting(){
     return (
         <div>
@@ -48,6 +49,7 @@ class Home extends Component{
                     {projs}
                     <MiniProj title="Featured Posts" description="description"/>
                 </div>
+                
             </div>            
         );
     }
