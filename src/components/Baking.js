@@ -20,21 +20,31 @@ class Baking extends React.Component{
         this.getData();
     }
     render(){
-        let projs = this.state.bakingProjects.map((val, index) => {
-            if(val.tag=="baking") {
-                return <MiniProj
-                    key={index}
-                    title={val.postTitle}
-                    description={val.postDescription}
-                    />
-            }
-            else return null;
+        let oldProjs = this.state.bakingProjects.filter((val) => {
+            if(val.tag == "baking") return true;
+            else return false;
+        })
+        let projs = oldProjs.map((val, index) => {
+            return <MiniProj
+                key={index}
+                title={val.postTitle}
+                description={val.postDescription}
+                />
         });
-        return (
-            <div>
-                {projs}
-            </div>
-        );
+        if (projs.length == 0) {
+            return (
+                <h3>
+                    Sorry, no baking projects right now.
+                </h3>
+            );
+        }
+        else {
+            return (
+                <div>
+                    {projs}
+                </div>
+            );
+        }
     }
     
 }

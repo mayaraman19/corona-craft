@@ -20,21 +20,31 @@ class Gardening extends React.Component{
         this.getData();
     }
     render() {
-        let projs = this.state.gardProjects.map((val, index) => {
-            if(val.tag=="gardening") {
-                return <MiniProj
-                    key={index}
-                    title={val.postTitle}
-                    description={val.postDescription}
-                    />
-            }
-            else return null;
+        let oldProjs = this.state.gardProjects.filter((val) => {
+            if(val.tag == "gardening") return true;
+            else return false;
+        })
+        let projs = oldProjs.map((val, index) => {
+            return <MiniProj
+                key={index}
+                title={val.postTitle}
+                description={val.postDescription}
+                />
         });
-        return (
-            <div>
-                {projs}
-            </div>
-        );
+        if (projs.length == 0) {
+            return (
+                <h3>
+                    Sorry, no gardening projects right now.
+                </h3>
+            );
+        }
+        else {
+            return (
+                <div>
+                    {projs}
+                </div>
+            );
+        }
     }
     
 }

@@ -20,22 +20,32 @@ class Masks extends React.Component {
         this.getData();
     }
     render() {
-        let projs = this.state.maskProjects.map((val, index) => {
-            if(val.tag=="masks") {
-                return <MiniProj
-                    key={index}
-                    title={val.postTitle}
-                    description={val.postDescription}
-                    />
-            }
-            else return null;
+        let oldProjs = this.state.maskProjects.filter((val) => {
+            if(val.tag == "masks") return true;
+            else return false;
+        })
+        let projs = oldProjs.map((val, index) => {
+            return <MiniProj
+                key={index}
+                title={val.postTitle}
+                description={val.postDescription}
+            />
         });
-        return (
-            <div>
-                {projs}
-            </div>
-        )
-
+        console.log(projs);
+        if (projs.length == 0) {
+            return (
+                <h3>
+                    Sorry, no mask projects right now.
+                </h3>
+            );
+        }
+        else {
+            return (
+                <div>
+                    {projs}
+                </div>
+            );
+        }
     }
     
 }
