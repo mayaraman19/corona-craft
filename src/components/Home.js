@@ -12,32 +12,32 @@ function Greeting(){
     );
 }
 
-let projdata = [];
-
-function getData() {
-    axios.get('http://localhost:5000/projects')
-    .then((response) => {
-        // for(var i = 0; i < response.data.length; i++) {
-        //     var title = response.data[i].postTitle;
-        //     var description=response.data[i].postDescription;
-        //     projs.push(<MiniProj title={title} description={description} />);
-        //     console.log(response.data[i].postTitle);
-        //     console.log(response.data[i].postDescription);
-        // }
-        projdata = response.data;
-    });
-}
-
-function Projs() {
-    getData();
-
-    
-}
-
 class Home extends Component{
-    
+    constructor(props) {
+        super(props);
+        this.state = {
+            projects: []
+        };
+    }
+    componentDidMount() {
+        this.getData();
+    }
+    getData = () => {
+        axios.get('http://localhost:5000/projects')
+        .then((response) => {
+            console.log(response.data);
+            this.setState({projects: response.data});
+        });
+    }
     render(){
-        //this.getData();
+        let projs = this.state.projects.map((currentValue, index) => {
+            console.log(currentValue.postTitle, currentValue.postDescription, index)
+            return <MiniProj
+                key={index}
+                title={currentValue.postTitle}
+                description={currentValue.postDescription}
+            />
+        });
         return(
             <div>
                 <div className="home-page">
@@ -45,6 +45,7 @@ class Home extends Component{
                     <Greeting/>
                 </div>
                 <div className='featured-content'>
+                    {projs}
                     <MiniProj title="Featured Posts" description="description"/>
                 </div>
             </div>            

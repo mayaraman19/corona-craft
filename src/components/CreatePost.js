@@ -22,6 +22,10 @@ class CreatePost extends React.Component {
     }
 
     handleTagsChange = e => {
+        let tags = e.target.value.split(', ');
+        console.log(e.target);
+        console.log(tags);
+        this.setState({tags: tags});
     }
 
     submitForm = () => {
@@ -36,6 +40,7 @@ class CreatePost extends React.Component {
                 <form
                     action="http://localhost:5000/projects"
                     method="POST"
+                    id="form"
                 //onSubmit={() => this.submitForm}
                 >
                     <div style={style.title}><h3>Title:</h3></div>
@@ -47,9 +52,11 @@ class CreatePost extends React.Component {
                         onChange={this.handleTitleChange}
                     /> */}
                     <textarea
+                        form="form" //the form it belongs to
                         placeholder="title"
-                        value={this.state.title}
                         onChange={this.handleTitleChange}
+                        name="postTitle" //backend stuff plz don't remove
+                        value={this.state.title}
                         style={{ width: "500px" }}
                     />
                     <div style={style.title}><h3 >Post:</h3></div>
@@ -63,16 +70,20 @@ class CreatePost extends React.Component {
 
                 /> */}
                     <textarea
+                        form="form"
                         placeholder="start writing your post here"
-                        value={this.state.post}
                         onChange={this.handlePostChange}
+                        name="postDescription"
+                        value={this.state.post}
                         style={{ width: "500px", height: "500px" }}
                     />
                     <div style={style.title}><h3 >Tags:</h3></div>
                     <textarea
+                        form="form"
                         placeholder="tags"
-                        value={this.state.tags}
                         onChange={this.handleTagsChange}
+                        name="postTags"
+                        value={this.state.tags}
                         style={{ width: "500px" }}
                     />
                     <br></br>
