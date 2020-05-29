@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import TopPosts from './MiniProj'
 import MiniProj from './MiniProj';
+import FeaturedContent from './FeaturedContent'
+
 
 function Greeting(){
     return (
@@ -34,6 +36,12 @@ function Projs() {
     
 }
 
+/*
+<div className='featured-content'>
+    <MiniProj title="Featured Posts" description="description"/>
+</div>
+*/
+
 class Home extends Component{
     
     render(){
@@ -44,9 +52,10 @@ class Home extends Component{
                     <h1>Home Page</h1>
                     <Greeting/>
                 </div>
-                <div className='featured-content'>
-                    <MiniProj title="Featured Posts" description="description"/>
+                <div>
+                 <MiniProj title="Featured Posts" description="description"/>
                 </div>
+                
             </div>            
         );
     }
