@@ -2,8 +2,10 @@ import React from 'react'
 
 function Gardening(){
     return (
-        <div>
-            so fresh
+        <div className="project-page">
+            <h1>
+                Gardening
+            </h1>
         </div>
     )
 }

@@ -2,8 +2,10 @@ import React from 'react'
 
 function Masks(){
     return (
-        <div>
-            safe
+        <div className="project-page">
+            <h1>
+                Masks
+            </h1>
         </div>
     )
 }
