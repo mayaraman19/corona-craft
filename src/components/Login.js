@@ -18,7 +18,7 @@ class Login extends Component {
                     </p>
                 </form>
                 <button>
-                <NavLink to="/Home">Log in!</NavLink>
+                <NavLink to="/">Log in!</NavLink>
                 </button>
             </div>
         );

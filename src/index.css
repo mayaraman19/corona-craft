@@ -36,6 +36,7 @@ h1, h2, p, ul, li {
   font-family: 'Pangolin', cursive;
 }
 
+/**
 .NavBar{
   /**
   trying to make the navbar go to the top of the screen
@@ -43,8 +44,8 @@ h1, h2, p, ul, li {
   
   position: fixed;
   top: 0px;
-  */
-}
+} 
+*/
 
 ul.NavBar li {
   display: inline;
@@ -67,6 +68,7 @@ ul.NavBar li a {
   */
   /* color: #FFF; */
   color: #779e95;
+  ;
   font-family: 'Pangolin', cursive;
   font-weight: bold;
   text-decoration: none;
@@ -115,7 +117,7 @@ ul.projects li a {
 }
 .featured-content{
   padding: 20px;
-  background-color: rgb(112, 112, 112);
+  background-color: #f6f7fb;
 }
 
 .content-block {
@@ -137,5 +139,5 @@ ul.projects li a {
 
 .active{
   /* background-color: rgb(0, 119, 119); */
-  background-color: #b1e1d5;
+  background-color: #9bcec0;
 }
