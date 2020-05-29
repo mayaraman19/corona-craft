@@ -19,8 +19,8 @@ function App() {
       <NavBar />
     <div className="App">
       <div className='content'>
-        <Route exact path="/" component={Login}/>
-        <Route exact path="/Home" component={Home}/>
+        <Route exact path="/" component={Home}/>
+        <Route path="/Login" component={Login}/>
         <div>
           <Route exact path="/Projects" component={Projects}/>
           <div className='projects'>

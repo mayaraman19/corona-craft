@@ -21,8 +21,8 @@ function MiniProj(props) {
 const styles = {
     block: {
         backgroundColor: 'antiquewhite',
-        height: 400,
-        width: 400,
+        height: 1000,
+        width: window,
         borderRadius: 10,
         // justifyContent: 'center',
         // alignItems: 'center',
