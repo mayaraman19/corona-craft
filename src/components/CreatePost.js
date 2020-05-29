@@ -21,12 +21,12 @@ class CreatePost extends React.Component {
         this.setState({ post: e.target.value });
     }
 
-    handleTagsChange = e => {
-        let tags = e.target.value.split(', ');
-        console.log(e.target);
-        console.log(tags);
-        this.setState({tags: tags});
-    }
+    // handleTagsChange = e => {
+    //     let tags = e.target.value.split(', ');
+    //     console.log(e.target);
+    //     console.log(tags);
+    //     this.setState({tags: tags});
+    // }
 
     submitForm = () => {
         this.setState({ toContact: true });
@@ -78,24 +78,22 @@ class CreatePost extends React.Component {
                         style={{ width: "500px", height: "500px" }}
                     />
                     <div style={style.title}><h3 >Tags:</h3></div>
-                    <textarea
-                        form="form"
-                        placeholder="tags"
-                        onChange={this.handleTagsChange}
-                        name="postTags"
-                        value={this.state.tags}
-                        style={{ width: "500px" }}
-                    />
+                    
+                    <select name="tag">
+                        <option value="gardening">Gardening</option>
+                        <option value="baking">Baking</option>
+                        <option value="masks">Masks</option>
+                        <option value="other">Other</option>
+                    </select>
                     <br></br>
                     <br></br>
                     <button
                         type="submit"
                     >
                         Submit
-                </button>
+                    </button>
                 </form>
             </div>
-
         );
     }
 }

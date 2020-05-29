@@ -24,6 +24,8 @@ const styles = {
         height: 1000,
         width: window,
         borderRadius: 10,
+        marginTop: 30,
+        marginBottom: 30,
         // justifyContent: 'center',
         // alignItems: 'center',
     },

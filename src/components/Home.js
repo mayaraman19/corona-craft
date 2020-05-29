@@ -40,11 +40,11 @@ class Home extends Component{
         });
         return(
             <div>
-                <div className="home-page">
+                <div className="home-page" >
                     <h1>Home Page</h1>
                     <Greeting/>
                 </div>
-                <div className='featured-content'>
+                <div className='featured-content' style={{display: 'block', marginTop: 50, marginBottom: 30}}>
                     {projs}
                     <MiniProj title="Featured Posts" description="description"/>
                 </div>
