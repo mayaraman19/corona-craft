@@ -1,22 +1,7 @@
-/**
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-*/
 
 .login{
   /* background-color: darkcyan; */
-  background-color: #b1e1d5;
+  background-color: #63a393;
   font-size: 24pt;
   padding: 10px;
 }
@@ -27,7 +12,7 @@ code {
 
 body {
   /* background-color: rgb(112, 112, 112); */
-  background-color: #d8c0e5;
+  background-color: #ffffff;
   padding: 10px;
   margin: 0;
 }
@@ -54,7 +39,7 @@ ul.NavBar li {
 
 ul.NavBar {
   /* background-color: rgb(2, 148, 148); */
-  background-color: #b1e1d5;
+  background-color: #63a393;
   padding: 0;
 
 }
@@ -67,7 +52,7 @@ ul.NavBar li a {
   width: 100%;
   */
   /* color: #FFF; */
-  color: #779e95;
+  color: #ffffff;
   ;
   font-family: 'Pangolin', cursive;
   font-weight: bold;
@@ -79,18 +64,18 @@ ul.NavBar li a {
 .home-page {
   padding: 10px;
   /* background-color: rgb(2, 148, 148); */
-  background-color: #b1e1d5;
+  background-color: #63a393;
 }
 
 .about-page{
   padding: 10px;
   /* background-color: rgb(2, 148, 148); */
-  background-color: #b1e1d5;
+  background-color: #63a393;
 }
 
 .project-page {
   /* background-color: rgb(2, 148, 148); */
-  background-color: #b1e1d5;
+  background-color: #63a393;
   padding: 10px;
 }
 
@@ -103,12 +88,12 @@ ul.projects li {
 
 ul.projects {
   /* background-color: rgb(2, 148, 148); */
-  background-color: #b1e1d5;
+  background-color: #63a393;
   padding: 0px;
 }
 ul.projects li a {
   /* color: #FFF; */
-  color: #779e95;
+  color: #ffffff;
   font-family: 'Pangolin', cursive;
   font-weight: lighter;
   text-decoration: none;
@@ -117,7 +102,7 @@ ul.projects li a {
 }
 .featured-content{
   padding: 20px;
-  background-color: #f6f7fb;
+  background-color: #ffffff;
 }
 
 .content-block {
@@ -126,7 +111,7 @@ ul.projects li a {
 
 .content {
   /* background-color: rgb(112, 112, 112); */
-  background-color: #d8c0e5;
+  background-color: #ffffff;
   padding: 0;
 }
 .content h2 {
