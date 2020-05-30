@@ -1,13 +1,44 @@
 import React from 'react'
+import axios from 'axios'
+import MiniProj from './MiniProj.js'
 
-function Masks(){
-    return (
-        <div className="project-page">
-            <h1>
-                Masks
-            </h1>
-        </div>
-    )
+class Masks extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            maskProjects: [],
+        }
+    }
+    getData = () => {
+        axios.get('http://localhost:5000/projects')
+        .then((response) => {
+            console.log(response.data);
+            this.setState({maskProjects: response.data});
+        });
+    }
+    componentDidMount() {
+        this.getData();
+    }
+    render() {
+        let projs = this.state.maskProjects.map((val, index) => {
+            if(val.tag=="masks") {
+                return <MiniProj
+                    key={index}
+                    title={val.postTitle}
+                    description={val.postDescription}
+                    />
+            }
+            else return null;
+        });
+        return (
+            <div>
+                <h1 className='project-page'>Masks</h1>                
+                {projs}
+            </div>
+        )
+
+    }
+    
 }
 
 export default Masks

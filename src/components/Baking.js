@@ -1,15 +1,43 @@
 import React from 'react'
+import axios from 'axios'
+import MiniProj from './MiniProj';
 
-function Baking(){
-    return (
-        <div className='project-page'>
-            <h1>
-                Baking
-            </h1>
-            
-            
-        </div>
-    )
+class Baking extends React.Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            bakingProjects: [],
+        }
+    }
+    getData = () => {
+        axios.get('http://localhost:5000/projects')
+        .then((response) => {
+            console.log(response.data);
+            this.setState({bakingProjects: response.data});
+        });
+    }
+    componentDidMount() {
+        this.getData();
+    }
+    render(){
+        let projs = this.state.bakingProjects.map((val, index) => {
+            if(val.tag=="baking") {
+                return <MiniProj
+                    key={index}
+                    title={val.postTitle}
+                    description={val.postDescription}
+                    />
+            }
+            else return null;
+        });
+        return (
+            <div>
+                <h1 className='project-page'>Baking</h1>                
+                {projs}
+            </div>
+        );
+    }
+    
 }
 
 export default Baking
