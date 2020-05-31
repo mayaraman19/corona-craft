@@ -10,7 +10,7 @@ class Masks extends React.Component {
         }
     }
     getData = () => {
-        axios.get('http://localhost:5000/projects')
+        axios.get('https://secure-headland-45260.herokuapp.com/')
         .then((response) => {
             console.log(response.data);
             this.setState({maskProjects: response.data});

@@ -23,7 +23,7 @@ class Home extends Component{
         this.getData();
     }
     getData = () => {
-        axios.get('http://localhost:5000/projects')
+        axios.get('https://secure-headland-45260.herokuapp.com/')
         .then((response) => {
             console.log(response.data);
             this.setState({projects: response.data});

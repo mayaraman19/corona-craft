@@ -38,7 +38,7 @@ class CreatePost extends React.Component {
         return (
             <div style={style.backgroundDiv}>
                 <form
-                    action="http://localhost:5000/projects"
+                    action="https://secure-headland-45260.herokuapp.com/"
                     method="POST"
                     id="form"
                 //onSubmit={() => this.submitForm}
