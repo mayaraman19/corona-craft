@@ -20,7 +20,6 @@ class Gardening extends React.Component{
         this.getData();
     }
     render() {
-<<<<<<< HEAD
         let oldProjs = this.state.gardProjects.filter((val) => {
             if(val.tag == "gardening") return true;
             else return false;
@@ -46,24 +45,6 @@ class Gardening extends React.Component{
                 </div>
             );
         }
-=======
-        let projs = this.state.gardProjects.map((val, index) => {
-            if(val.tag=="gardening") {
-                return <MiniProj
-                    key={index}
-                    title={val.postTitle}
-                    description={val.postDescription}
-                    />
-            }
-            else return null;
-        });
-        return (
-            <div>
-                <h1 className='project-page'>Gardening</h1>
-                {projs}
-            </div>
-        );
->>>>>>> cee62d9... added some headers
     }
     
 }

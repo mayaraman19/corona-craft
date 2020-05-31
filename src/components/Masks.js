@@ -20,7 +20,6 @@ class Masks extends React.Component {
         this.getData();
     }
     render() {
-<<<<<<< HEAD
         let oldProjs = this.state.maskProjects.filter((val) => {
             if(val.tag == "masks") return true;
             else return false;
@@ -47,25 +46,6 @@ class Masks extends React.Component {
                 </div>
             );
         }
-=======
-        let projs = this.state.maskProjects.map((val, index) => {
-            if(val.tag=="masks") {
-                return <MiniProj
-                    key={index}
-                    title={val.postTitle}
-                    description={val.postDescription}
-                    />
-            }
-            else return null;
-        });
-        return (
-            <div>
-                <h1 className='project-page'>Masks</h1>                
-                {projs}
-            </div>
-        )
-
->>>>>>> cee62d9... added some headers
     }
     
 }

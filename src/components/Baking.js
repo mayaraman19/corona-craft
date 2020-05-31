@@ -20,7 +20,6 @@ class Baking extends React.Component{
         this.getData();
     }
     render(){
-<<<<<<< HEAD
         let oldProjs = this.state.bakingProjects.filter((val) => {
             if(val.tag == "baking") return true;
             else return false;
@@ -46,24 +45,6 @@ class Baking extends React.Component{
                 </div>
             );
         }
-=======
-        let projs = this.state.bakingProjects.map((val, index) => {
-            if(val.tag=="baking") {
-                return <MiniProj
-                    key={index}
-                    title={val.postTitle}
-                    description={val.postDescription}
-                    />
-            }
-            else return null;
-        });
-        return (
-            <div>
-                <h1 className='project-page'>Baking</h1>                
-                {projs}
-            </div>
-        );
->>>>>>> cee62d9... added some headers
     }
     
 }
