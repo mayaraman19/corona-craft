@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import TopPosts from './MiniProj'
 import MiniProj from './MiniProj';
-import Scraper from './scraper'
 
 
 function Greeting(){
