@@ -1,6 +1,9 @@
 import React from 'react'
+import {NavLink} from 'react';
 import axios from 'axios'
 import MiniProj from './MiniProj';
+import ProjectsNavBar from './ProjectsNavBar.js'
+import Projects from './Projects';
 
 class Baking extends React.Component{
     constructor(props) {
@@ -29,13 +32,15 @@ class Baking extends React.Component{
                 key={index}
                 title={val.postTitle}
                 description={val.postDescription}
+                tag={val.tag}
                 />
         });
         if (projs.length == 0) {
             return (
-                <h3>
+                 <h3>
                     Sorry, no baking projects right now.
                 </h3>
+                
             );
         }
         else {

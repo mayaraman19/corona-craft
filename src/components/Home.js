@@ -36,6 +36,7 @@ class Home extends Component{
                 key={index}
                 title={currentValue.postTitle}
                 description={currentValue.postDescription}
+                tag={currentValue.tag}
             />
         });
         return(

@@ -29,6 +29,7 @@ class Masks extends React.Component {
                 key={index}
                 title={val.postTitle}
                 description={val.postDescription}
+                tag={val.tag}
             />
         });
         console.log(projs);
