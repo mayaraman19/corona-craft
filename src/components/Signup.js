@@ -35,6 +35,7 @@ class Signup extends Component {
           this.setState({
             loading: false
           });
+          localStorage.setItem('loggedin', true);
           this.props.history.push('/');
         })
         .catch((err) => {
@@ -42,6 +43,7 @@ class Signup extends Component {
             errors: err.response.data,
             loading: false
           });
+          localStorage.setItem('loggedin', false);
         });
     };
     handleChange = (event) => {

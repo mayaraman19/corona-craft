@@ -6,31 +6,44 @@ import axios from 'axios';
 })*/
 
 
-/*class CreatePost extends React.Component {
+class CreatePost extends React.Component {
     constructor() {
         super();
         this.state = {
             title: '',
             body: '',
-            //tags: [],
-            submitted: false
+            tag: '',
+            errorMessage:''
         };
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
+        var token = localStorage.getItem('FBIdToken');
+        var loggedin = localStorage.getItem('loggedin');
+        console.log(token);
         const postData = {
-          title: "Test Title",
-          body: "Test Body from frontend"
+          title: this.state.title,
+          body: this.state.body,
+          tag: this.state.tag
         };
-        axios.post("/post", postData)
+        console.log(loggedin);
+        axios.post("/post",postData, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+            }})
         .then(function(response) {
             console.log(response);
         })
         .catch(function(error) {
             console.log(error);
         });
-        this.setState({submitted:true})
+        if (loggedin===false)
+        {this.props.history.push('/Login');}
+        else
+        {this.props.history.push('/');}
+        
     };
     handleChange = (e) => {
         this.setState({
@@ -38,19 +51,10 @@ import axios from 'axios';
         });
       };
 
-    // handleTagsChange = e => {
-    //     let tags = e.target.value.split(', ');
-    //     console.log(e.target);
-    //     console.log(tags);
-    //     this.setState({tags: tags});
-    // }
-
     render() {
-        if (this.state.submitted === true) {
-            return <Redirect to='/Projects' />
-        }
         return (
             <div style={style.backgroundDiv}>
+                { this.state.errorMessage && (<h3 className="error"> { this.state.errorMessage } </h3>)}
                 <form  onSubmit={this.handleSubmit}>
                     <div style={style.title}><h3>Title:</h3></div>
                     <textarea
@@ -75,11 +79,17 @@ import axios from 'axios';
                         style={{ width: "500px", height: "500px" }}
                     />
                     <div style={style.title}><h3 >Tags:</h3></div>
-                    <select name="tag">
+                    <select id="tag"
+                        name="tag"
+                        type="tag"
+                        label="Tag"
+                        value = {this.state.value}
+                        onChange={this.handleChange}
+                        >
                         <option value="gardening">Gardening</option>
                         <option value="baking">Baking</option>
-                        <option value="masks">Masks</option>
-                        <option value="other">Other</option>
+                        <option value = "mask">Masks</option>
+                        <option value = "other">Other</option>
                     </select>
                     <br></br>
                     <br></br>
@@ -93,9 +103,9 @@ import axios from 'axios';
             </div>
         );
     }
-}*/
+}
 
-class CreatePost extends React.Component {
+/*class CreatePost extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -144,7 +154,7 @@ class CreatePost extends React.Component {
                         name="postTitle"
                         value={this.state.title}
                         onChange={this.handleTitleChange}
-                    /> */}
+                    /> }
                     <textarea
                         form="form" //the form it belongs to
                         placeholder="title"
@@ -161,7 +171,7 @@ class CreatePost extends React.Component {
                     value={this.state.post}
                     onChange={this.handlePostChange}
                     style={{ width: "500px", height: "500px", textAlign: "flex-start" }}
-                /> */}
+                /> }
                     <textarea
                         form="form"
                         placeholder="start writing your post here"
@@ -189,7 +199,7 @@ class CreatePost extends React.Component {
             </div>
         );
     }
-}
+}*/
 
 const style = {
     backgroundDiv: {

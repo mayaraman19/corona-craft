@@ -30,9 +30,11 @@ class Login extends Component {
               loading: false
             });
             localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
+            localStorage.setItem('loggedin', true);
             this.props.history.push('/');
           })
           .catch((err) => {
+            localStorage.setItem('loggedin', false);
             this.setState({
               errors: err.response.data,
               loading: false
