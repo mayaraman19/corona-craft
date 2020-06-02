@@ -1,25 +1,42 @@
 import React from "react";
 import { Redirect } from 'react-router-dom'
+import axios from 'axios';
+/*const api = axios.create({
+    baseURL: 'https://us-central1-corona-craft-2dfcb.cloudfunctions.net/api'
+})*/
+
 
 class CreatePost extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
-            id: "",
-            title: "",
-            post: "",
-            tags: [],
-            toContact: false
+            title: '',
+            body: '',
+            //tags: [],
+            submitted: false
         };
     }
 
-    handleTitleChange = e => {
-        this.setState({ title: e.target.value });
-    }
-
-    handlePostChange = e => {
-        this.setState({ post: e.target.value });
-    }
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const postData = {
+          title: "Test Title",
+          body: "Test Body from frontend"
+        };
+        axios.post("/post", postData)
+        .then(function(response) {
+            console.log(response);
+        })
+        .catch(function(error) {
+            console.log(error);
+        });
+        this.setState({submitted:true})
+    };
+    handleChange = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value
+        });
+      };
 
     // handleTagsChange = e => {
     //     let tags = e.target.value.split(', ');
@@ -28,57 +45,36 @@ class CreatePost extends React.Component {
     //     this.setState({tags: tags});
     // }
 
-    submitForm = () => {
-        this.setState({ toContact: true });
-    }
     render() {
-        if (this.state.toContact === true) {
+        if (this.state.submitted === true) {
             return <Redirect to='/Projects' />
         }
         return (
             <div style={style.backgroundDiv}>
-                <form
-                    action="https://secure-headland-45260.herokuapp.com/"
-                    method="POST"
-                    id="form"
-                //onSubmit={() => this.submitForm}
-                >
+                <form  onSubmit={this.handleSubmit}>
                     <div style={style.title}><h3>Title:</h3></div>
-                    {/* <input
-                        type="text"
-                        placeholder="title"
-                        name="postTitle"
-                        value={this.state.title}
-                        onChange={this.handleTitleChange}
-                    /> */}
                     <textarea
-                        form="form" //the form it belongs to
-                        placeholder="title"
-                        onChange={this.handleTitleChange}
-                        name="postTitle" //backend stuff plz don't remove
-                        value={this.state.title}
+                        id="title"
+                        name="title"
+                        type="title"
+                        label="Title"
+                        value = {this.state.title}
+                        onChange={this.handleChange}
+                        placeholder="Post Title"
                         style={{ width: "500px" }}
                     />
                     <div style={style.title}><h3 >Post:</h3></div>
-                    {/* <input
-                    type="text"
-                    placeholder="start writing your post here"
-                    name="postDescription"
-                    value={this.state.post}
-                    onChange={this.handlePostChange}
-                    style={{ width: "500px", height: "500px", textAlign: "flex-start" }}
-
-                /> */}
                     <textarea
-                        form="form"
+                        id="body"
+                        name="body"
+                        type="body"
+                        label="Body"
+                        value = {this.state.body}
+                        onChange={this.handleChange}
                         placeholder="start writing your post here"
-                        onChange={this.handlePostChange}
-                        name="postDescription"
-                        value={this.state.post}
                         style={{ width: "500px", height: "500px" }}
                     />
                     <div style={style.title}><h3 >Tags:</h3></div>
-                    
                     <select name="tag">
                         <option value="gardening">Gardening</option>
                         <option value="baking">Baking</option>
@@ -88,7 +84,8 @@ class CreatePost extends React.Component {
                     <br></br>
                     <br></br>
                     <button
-                        type="submit"
+                        id="submit"
+                        type="submit"        
                     >
                         Submit
                     </button>

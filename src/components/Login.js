@@ -1,25 +1,84 @@
 import React from 'react';
 import {Component} from 'react';
 import {NavLink} from 'react-router-dom';
+import axios from 'axios';
 
 class Login extends Component {
-    render() {
-        return( //style={styles.background} >
+    constructor() {
+        super();
+        this.state = {
+          email: '',
+          password: '',
+          loading: false,
+          errors: {}
+        };
+      }
+      handleSubmit = (event) => {
+        event.preventDefault();
+        this.setState({
+          loading: true
+        });
+        const userData = {
+          email: this.state.email,
+          password: this.state.password
+        };
+        axios
+          .post('/login', userData)
+          .then((res) => {
+            console.log(res.data);
+            this.setState({
+              loading: false
+            });
+            localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`);
+            this.props.history.push('/');
+          })
+          .catch((err) => {
+            this.setState({
+              errors: err.response.data,
+              loading: false
+            });
+          });
+      };
+      handleChange = (event) => {
+        this.setState({
+          [event.target.name]: event.target.value
+        });
+      };
+      render() {
+        return( 
             <div className="login" > 
                 <h3>Welcome to CoronaCraft!</h3>
-                <form style={styles.form}>
-                    <p>
-                        <label className="textfield">Username</label>
-                        <input/>
-                    </p>
-                    <p>
-                        <label className="textfield">Password</label>
-                        <input type="password"/>
-                    </p>
-                </form>
-                <button>
-                <NavLink to="/">Log in!</NavLink>
-                </button>
+                <form style = {styles.form} noValidate onSubmit={this.handleSubmit}>
+            <div>
+              <textarea
+              id="email"
+              name="email"
+              type="email"
+              label="Email"
+              placeholder="email"
+              value={this.state.email}
+              onChange={this.handleChange}
+              fullWidth
+            />
+            </div>
+            
+            <div>
+            <textarea
+              id="password"
+              name="password"
+              type="password"
+              label="Password"
+              placeholder="password"
+              value={this.state.password}
+              onChange={this.handleChange}
+              fullWidth
+            />
+            </div>
+            <button
+              type="submit"
+            >Login
+            </button>
+            </form>
             </div>
         );
     }

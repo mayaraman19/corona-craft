@@ -39,5 +39,30 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-functions.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-auth.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBmyvjrF89FKLXoChYRYaIb_SZ-KVdTXso",
+    authDomain: "corona-craft-2dfcb.firebaseapp.com",
+    databaseURL: "https://corona-craft-2dfcb.firebaseio.com",
+    projectId: "corona-craft-2dfcb",
+    storageBucket: "corona-craft-2dfcb.appspot.com",
+    messagingSenderId: "48719491043",
+    appId: "1:48719491043:web:d9de7d25e8c27635383ad6",
+    measurementId: "G-HZBDW1LQ4X"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   </body>
 </html>

@@ -3,7 +3,7 @@ import logo from './components/logo.svg';
 import './App.css';
 import Home from './components/Home'
 import Projects from './components/Projects'
-import {Route, Link} from 'react-router-dom';
+import {BrowerRouter, Route, Link} from 'react-router-dom';
 import NavBar from './components/NavBar'
 import About from './components/About';
 import CreatePost from './components/CreatePost';
