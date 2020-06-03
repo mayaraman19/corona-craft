@@ -1,34 +1,37 @@
-import React from 'react'
-import axios from 'axios'
+import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
+import axios from 'axios';
 import MiniProj from './MiniProj.js'
 
 class Gardening extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            gardProjects: [],
+            posts: [],
         }
     }
     getData = () => {
-        axios.get('https://secure-headland-45260.herokuapp.com/')
-        .then((response) => {
-            console.log(response.data);
-            this.setState({gardProjects: response.data});
+        var token = localStorage.getItem('FBIdToken');
+        var loggedin = localStorage.getItem('loggedin');
+        axios.get('/posts')
+        .then((res) => {
+            console.log(res.data);
+            this.setState({posts: res.data});
         });
     }
     componentDidMount() {
         this.getData();
     }
     render() {
-        let oldProjs = this.state.gardProjects.filter((val) => {
+        let gardProjs = this.state.posts.filter((val) => {
             if(val.tag == "gardening") return true;
             else return false;
         })
-        let projs = oldProjs.map((val, index) => {
+        let projs = gardProjs.map((val, index) => {
             return <MiniProj
                 key={index}
-                title={val.postTitle}
-                description={val.postDescription}
+                title={val.title}
+                description={val.body}
                 tag={val.tag}
                 />
         });
@@ -49,5 +52,4 @@ class Gardening extends React.Component{
     }
     
 }
-
-export default Gardening
+export default Gardening;

@@ -27,7 +27,7 @@ class CreatePost extends React.Component {
           body: this.state.body,
           tag: this.state.tag
         };
-        console.log(loggedin);
+        console.log(this.state.tag);
         axios.post("/post",postData, {
             headers: {
                 'Content-Type': 'application/json',
@@ -83,11 +83,11 @@ class CreatePost extends React.Component {
                         name="tag"
                         type="tag"
                         label="Tag"
-                        value = {this.state.value}
+                        value = {this.state.tag}
                         onChange={this.handleChange}
                         >
-                        <option value="gardening">Gardening</option>
-                        <option value="baking">Baking</option>
+                        <option value= "gardening">Gardening</option>
+                        <option value= "baking">Baking</option>
                         <option value = "mask">Masks</option>
                         <option value = "other">Other</option>
                     </select>
