@@ -25,7 +25,8 @@ class CreatePost extends React.Component {
         const postData = {
           title: this.state.title,
           body: this.state.body,
-          tag: this.state.tag
+          //@MICHELLE: CHANGE THIS IF NECESSARY
+          tag: document.getElementById("tag").value,
         };
         console.log(this.state.tag);
         axios.post("/post",postData, {
@@ -83,8 +84,8 @@ class CreatePost extends React.Component {
                         name="tag"
                         type="tag"
                         label="Tag"
-                        value = {this.state.tag}
-                        onChange={this.handleChange}
+                        //value = {this.state.tag}
+                        //onChange={this.handleChange}
                         >
                         <option value= "gardening">Gardening</option>
                         <option value= "baking">Baking</option>
