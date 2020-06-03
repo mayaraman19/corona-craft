@@ -25,7 +25,7 @@ class CreatePost extends React.Component {
         const postData = {
           title: this.state.title,
           body: this.state.body,
-          //@MICHELLE: CHANGE THIS IF NECESSARY
+          //@MICHELLE: CHANGE FOLLOWING LINE IF NECESSARY
           tag: document.getElementById("tag").value,
         };
         console.log(this.state.tag);
