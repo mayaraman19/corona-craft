@@ -23,7 +23,7 @@ class Home extends Component{
         this.getData();
     }
     getData = () => {
-        axios.get('https://secure-headland-45260.herokuapp.com/')
+        axios.get('http://localhost:5000/')
         .then((response) => {
             console.log(response.data);
             this.setState({projects: response.data});
@@ -37,6 +37,7 @@ class Home extends Component{
                 title={currentValue.postTitle}
                 description={currentValue.postDescription}
                 tag={currentValue.tag}
+                link={currentValue.link}
             />
         });
         return(
