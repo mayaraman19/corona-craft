@@ -44,7 +44,7 @@ class Masks extends React.Component {
         }
         else {
             return (
-                <div>
+                <div style={{height: 500, overflow: 'scroll'}}>
                     {projs}
                 </div>
             );
