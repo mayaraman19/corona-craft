@@ -13,8 +13,9 @@ function MiniProj(props) {
             {/* <h3 style={styles.description}>
                 {props.description}
             </h3> */}
-            <a href={props.link} style={styles.description}>
-                {props.description}
+            <p style={styles.description}>{props.description}</p>
+            <a href={props.link} style = {styles.description}>
+                {props.link}
             </a>
         </div>
 
