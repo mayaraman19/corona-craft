@@ -1,8 +1,26 @@
 import React from 'react';
+import {Link} from 'react';
 
 
 
 function MiniProj(props) {
+    if(props.link) {
+        return(
+            <div style={styles.block}>
+            <h2 style={styles.title}>
+                {props.title}
+            </h2>
+            {/* <h3 style={styles.description}>
+                {props.description}
+            </h3> */}
+            <a href={props.link}>
+                {props.description}
+            </a>
+        </div>
+
+        );
+    }
+    else{
     return(
         <div style={styles.block}>
             <h2 style={styles.title}>
@@ -14,6 +32,7 @@ function MiniProj(props) {
         </div>
 
     );
+    }
 
 
 };
