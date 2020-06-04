@@ -6,31 +6,33 @@ class Masks extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            maskProjects: [],
+            posts: [],
         }
     }
     getData = () => {
-        axios.get('https://secure-headland-45260.herokuapp.com/')
-        .then((response) => {
-            console.log(response.data);
-            this.setState({maskProjects: response.data});
+        var token = localStorage.getItem('FBIdToken');
+        var loggedin = localStorage.getItem('loggedin');
+        axios.get('/posts')
+        .then((res) => {
+            console.log(res.data);
+            this.setState({posts: res.data});
         });
     }
     componentDidMount() {
         this.getData();
     }
     render() {
-        let oldProjs = this.state.maskProjects.filter((val) => {
-            if(val.tag == "masks") return true;
+        let maskProjs = this.state.posts.filter((val) => {
+            if(val.tag.toString().toLowerCase() == "masks") return true;
             else return false;
         })
-        let projs = oldProjs.map((val, index) => {
+        let projs = maskProjs.map((val, index) => {
             return <MiniProj
                 key={index}
-                title={val.postTitle}
-                description={val.postDescription}
+                title={val.title}
+                description={val.body}
                 tag={val.tag}
-            />
+                />
         });
         console.log(projs);
         if (projs.length == 0) {
