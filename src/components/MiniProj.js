@@ -13,7 +13,7 @@ function MiniProj(props) {
             {/* <h3 style={styles.description}>
                 {props.description}
             </h3> */}
-            <a href={props.link}>
+            <a href={props.link} style={styles.description}>
                 {props.description}
             </a>
         </div>
@@ -40,15 +40,19 @@ function MiniProj(props) {
 const styles = {
     block: {
         backgroundColor: 'antiquewhite',
-        height: 1000,
-        width: window,
+        height: 300,
+        width: 300,
         borderRadius: 10,
         marginTop: 30,
         marginBottom: 30,
+        marginLeft: 30,
+        marginRight: 30,
+        display: 'inline-block',
         // justifyContent: 'center',
         // alignItems: 'center',
     },
     title: {
+        height: 30,
         fontSize: 20,
         color: 'black',
         left: '50%',
