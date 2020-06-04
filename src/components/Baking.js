@@ -9,29 +9,31 @@ class Baking extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            bakingProjects: [],
+            posts: [],
         }
     }
     getData = () => {
-        axios.get('https://secure-headland-45260.herokuapp.com/')
-        .then((response) => {
-            console.log(response.data);
-            this.setState({bakingProjects: response.data});
+        var token = localStorage.getItem('FBIdToken');
+        var loggedin = localStorage.getItem('loggedin');
+        axios.get('/posts')
+        .then((res) => {
+            console.log(res.data);
+            this.setState({posts: res.data});
         });
     }
     componentDidMount() {
         this.getData();
     }
-    render(){
-        let oldProjs = this.state.bakingProjects.filter((val) => {
-            if(val.tag == "baking") return true;
+    render() {
+        let bakingProjs = this.state.posts.filter((val) => {
+            if(val.tag.toString().toLowerCase() == "baking") return true;
             else return false;
         })
-        let projs = oldProjs.map((val, index) => {
+        let projs = bakingProjs.map((val, index) => {
             return <MiniProj
                 key={index}
-                title={val.postTitle}
-                description={val.postDescription}
+                title={val.title}
+                description={val.body}
                 tag={val.tag}
                 />
         });

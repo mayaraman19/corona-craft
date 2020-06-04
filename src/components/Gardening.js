@@ -23,7 +23,7 @@ class Gardening extends React.Component{
     }
     render() {
         let gardProjs = this.state.posts.filter((val) => {
-            if(val.tag == "gardening") return true;
+            if(val.tag.toString().toLowerCase() == "gardening") return true;
             else return false;
         })
         let projs = gardProjs.map((val, index) => {
