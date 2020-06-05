@@ -34,6 +34,16 @@ class Other extends React.Component {
                 tag={val.tag}
             />
         });
+        let projFiltered = otherProjs.map((val, index) => {
+            if (val.postTitle.toLowerCase().includes(this.state.inputValue.toLowerCase()) ||
+                val.postDescription.toLowerCase().includes(this.state.inputValue.toLowerCase()))
+                return <MiniProj
+                    key={index}
+                    title={val.postTitle}
+                    description={val.postDescription}
+                />
+        });
+
         if (projs.length == 0) {
             return (
                 <h3>
@@ -41,14 +51,46 @@ class Other extends React.Component {
                 </h3>
             );
         }
+        else if (this.state.isSearching === true) {
+            return (
+                <div>
+                    <div style={{ float: 'right' }}>
+                        <p style={{ whiteSpace: "pre-line" }}>
+                            <label htmlFor="search"> Search by name </label>
+                            <input type="text" value={this.props.inputValue} onChange={this.handleChange} />
+                            <button onClick={() => this.setState({ isSearching: true })}>Search</button>
+                        </p>
+
+                    </div>
+
+                    <div>
+                        {projFiltered}
+                    </div>
+                    <div>
+                        <button onClick={() => this.setState({ isSearching: false })}>
+                            See all posts
+                                    </button>
+                    </div>
+                </div >
+            );
+        }
         else {
             return (
-                <div style={{ height: 500, overflow: 'scroll' }}>
-                    {projs}
-                </div>
+                <div>
+                    <div style={{ float: 'right' }}>
+                        <p style={{ whiteSpace: "pre-line" }}>
+                            <label htmlFor="search"> search by name </label>
+                            <input type="text" value={this.props.inputValue} onChange={this.handleChange} />
+                            <button onClick={() => this.setState({ isSearching: true })}>search</button>
+                        </p>
+                    </div>
+
+                    <div style={{ height: 500, overflow: 'scroll' }}>
+                        {projs}
+                    </div>
+                </div >
             );
         }
     }
-
 }
 export default Other;
