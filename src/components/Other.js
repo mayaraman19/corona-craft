@@ -8,6 +8,8 @@ class Other extends React.Component {
         super(props);
         this.state = {
             posts: [],
+            isSearching: false,
+            inputValue: ""
         }
     }
     getData = () => {
@@ -42,8 +44,9 @@ class Other extends React.Component {
             />
         });
         let projFiltered = otherProjs.map((val, index) => {
-            if (val.postTitle.toLowerCase().includes(this.state.inputValue.toLowerCase()) ||
-                val.postDescription.toLowerCase().includes(this.state.inputValue.toLowerCase()))
+            if (this.state.inputValue 
+                && ((val.postTitle && val.postTitle.toLowerCase().includes(this.state.inputValue.toLowerCase())) 
+                || (val.postDescription && val.postDescription.toLowerCase().includes(this.state.inputValue.toLowerCase()))))
                 return <MiniProj
                     key={index}
                     title={val.postTitle}
