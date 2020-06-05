@@ -73,7 +73,7 @@ class Other extends React.Component {
 
                     </div>
 
-                    <div>
+                    <div style = {{ height: 500, overflow: 'scroll' }}>
                         {projFiltered}
                     </div>
                     <div>
