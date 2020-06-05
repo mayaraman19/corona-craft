@@ -85,7 +85,7 @@ class Signup extends Component {
         <input
           id="confirmPassword"
           name="confirmPassword"
-          type="confirmPassword"
+          type="password"
           label="ConfirmPassword"
           placeholder="confirm password"
           value={this.state.confirmPassword}
