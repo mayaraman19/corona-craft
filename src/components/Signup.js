@@ -57,7 +57,7 @@ class Signup extends Component {
             <h3>Welcome to CoronaCraft!</h3>
             <form style = {styles.form} noValidate onSubmit={this.handleSubmit}>
         <div>
-          <textarea
+          <input
           id="email"
           name="email"
           type="email"
@@ -70,7 +70,7 @@ class Signup extends Component {
         </div>
         
         <div>
-        <textarea
+        <input
           id="password"
           name="password"
           type="password"
@@ -82,7 +82,7 @@ class Signup extends Component {
         />
         </div>
         <div>
-        <textarea
+        <input
           id="confirmPassword"
           name="confirmPassword"
           type="confirmPassword"
@@ -94,7 +94,7 @@ class Signup extends Component {
         />
         </div>
         <div>
-        <textarea
+        <input
           id="handle"
           name="handle"
           type="handle"
