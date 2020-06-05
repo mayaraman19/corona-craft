@@ -14,7 +14,12 @@ class Other extends React.Component {
         var token = localStorage.getItem('FBIdToken');
         var loggedin = localStorage.getItem('loggedin');
 
-        axios.get('https://us-central1-corona-craft-2dfcb.cloudfunctions.net/api/posts')
+        // axios.get('https://us-central1-corona-craft-2dfcb.cloudfunctions.net/api/posts')
+        //     .then((res) => {
+        //         console.log(res.data);
+        //         this.setState({ posts: res.data });
+        //     });
+        axios.get('/posts')
             .then((res) => {
                 console.log(res.data);
                 this.setState({ posts: res.data });
