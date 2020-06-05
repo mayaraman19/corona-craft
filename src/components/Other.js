@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import MiniProj from './MiniProj.js'
 
+
 class Other extends React.Component {
     constructor(props) {
         super(props);
@@ -12,7 +13,8 @@ class Other extends React.Component {
     getData = () => {
         var token = localStorage.getItem('FBIdToken');
         var loggedin = localStorage.getItem('loggedin');
-        axios.get('/posts')
+
+        axios.get('https://us-central1-corona-craft-2dfcb.cloudfunctions.net/api/posts')
             .then((res) => {
                 console.log(res.data);
                 this.setState({ posts: res.data });

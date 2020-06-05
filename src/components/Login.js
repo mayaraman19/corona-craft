@@ -52,7 +52,7 @@ class Login extends Component {
                 <h3>Welcome to CoronaCraft!</h3>
                 <form style = {styles.form} noValidate onSubmit={this.handleSubmit}>
             <div>
-              <textarea
+              <input
               id="email"
               name="email"
               type="email"
@@ -65,7 +65,7 @@ class Login extends Component {
             </div>
             
             <div>
-            <textarea
+            <input
               id="password"
               name="password"
               type="password"
