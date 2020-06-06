@@ -12,6 +12,7 @@ import Baking from './components/Baking'
 import Masks from './components/Masks'
 import Gardening from './components/Gardening'
 import Other from './components/Other'
+import BigProj from './components/BigProj.js';
 
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -33,6 +34,7 @@ function App() {
               <Route exact path="/Projects/Masks" component={Masks} />
               <Route exact path="/Projects/Gardening" component={Gardening} />
               <Route exact path="/Projects/Other" component={Other} />
+              <Route exact path="/Projects/proj/:title/:desc/:link?" component={BigProj} />
             </div>
           </div>
           <Route exact path="/About" component={About} />

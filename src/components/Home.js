@@ -25,13 +25,13 @@ class Home extends Component{
     getData = () => {
         axios.get('http://localhost:5000/')
         .then((response) => {
-            console.log(response.data);
+            //console.log(response.data);
             this.setState({projects: response.data});
         });
     }
     render(){
         let projs = this.state.projects.map((currentValue, index) => {
-            console.log(currentValue.postTitle, currentValue.postDescription, index)
+            //console.log(currentValue.postTitle, currentValue.postDescription, index)
             return <MiniProj
                 key={index}
                 title={currentValue.postTitle}
@@ -47,7 +47,7 @@ class Home extends Component{
                     <Greeting/>
                 </div>
                 <div className='featured-content' 
-                style={{marginTop: 50, marginBottom: 30, height: 'screen', overflow: 'scroll'}}>
+                style={{marginTop: 50, marginBottom: 30, height: 500, overflow: 'scroll'}}>
                     {projs}
                 </div>
             </div>            
