@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import MiniProj from './MiniProj.js'
+import Grid from '@material-ui/core/Grid';
+
+import Post from './Posts.js'
 
 class Gardening extends React.Component{
     constructor(props) {
@@ -17,37 +20,29 @@ class Gardening extends React.Component{
             console.log(res.data);
             this.setState({posts: res.data});
         });
+        let gardProjs = this.state.posts.filter((val) => {
+            if(val.tag.toString().toLowerCase() == "gardening") return true;
+            else return false;
+        })
+        this.setState({posts: gardProjs})
     }
     componentDidMount() {
         this.getData();
     }
     render() {
-        let gardProjs = this.state.posts.filter((val) => {
-            if(val.tag.toString().toLowerCase() == "gardening") return true;
-            else return false;
-        })
-        let projs = gardProjs.map((val, index) => {
-            return <MiniProj
-                key={index}
-                title={val.title}
-                description={val.body}
-                tag={val.tag}
-                />
-        });
-        if (projs.length == 0) {
-            return (
-                <h3>
-                    Sorry, no gardening projects right now.
-                </h3>
-            );
-        }
-        else {
-            return (
-                <div style={{height: 500, overflow: 'scroll'}}>
-                    {projs}
-                </div>
-            );
-        }
+        let Projs = this.state.posts
+        ?(this.state.posts.map((post) => (
+          <Post key={post.postId} post={post} />
+        ))
+        )
+        :<p>Loading...</p>
+        return (
+        <Grid container spacing={1}>
+            <Grid container item spacing={3}>
+              {Projs}
+            </Grid>
+        </Grid>
+        )
     }
     
 }
