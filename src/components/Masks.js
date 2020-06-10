@@ -26,7 +26,7 @@ class Masks extends React.Component {
     }
     render() {
         let maskProjs = this.state.posts.filter((val) => {
-            if(val.tag.toString().toLowerCase() == "masks") return true;
+            if(val.tag.toString().toLowerCase() == "mask") return true;
             else return false;
         })
         if (maskProjs.length == 0) {
