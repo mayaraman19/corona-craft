@@ -15,7 +15,7 @@ class NavBar extends Component{
             <li><NavLink to="/About" activeClassName="active"> About</NavLink></li>
             <li><NavLink to="/Login" activeClassName="active"> Login</NavLink></li>
             <li><NavLink to="/Signup" activeClassName="active"> Signup</NavLink></li>
-            <button onClick={this.logout}><NavLink to="/" activeClassName="active"> logout</NavLink></button>
+            <li onClick={this.logout}><NavLink to="/" activeClassName="active"> Logout</NavLink></li>
         </ul>
     );
     }
