@@ -55,7 +55,10 @@ class CreatePost extends React.Component {
     render() {
         return (
             <div style={style.backgroundDiv}>
-                { this.state.errorMessage && (<h3 className="error"> { this.state.errorMessage } </h3>)}
+                {/* { this.state.errorMessage && (<h3 className="error"> { this.state.errorMessage } </h3>)} */}
+                <h3 style={{color: 'red'}}>
+                    Please create an account and/or log in before submitting a post.
+                </h3>
                 <form  onSubmit={this.handleSubmit}>
                     <div style={style.title}><h3>Title:</h3></div>
                     <textarea

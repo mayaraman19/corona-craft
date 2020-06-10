@@ -14,13 +14,13 @@ function MiniProj(props) {
     const onNavigateStatic = (title, description) => {
         history.push(`/Projects/proj/${title}/${description}`);
     }
-    const onNavigateLink = (title, description, link) => {
-        history.push(`/Projects/proj/${title}/${description}/${link}`)
-    }
+    // const onNavigateLink = (title, description, link) => {
+    //     history.push(`/Projects/proj/${title}/${description}/${link}`)
+    // }
         if(props.link) {
             return(
                 <div style={styles.block} 
-                onClick={() => onNavigateLink(props.title, props.description, props.link)}>
+                /*onClick={() => onNavigateLink(props.title, props.description, props.link)}*/>
                         <h2 style={styles.title}>
                         {props.title}
                         </h2>
