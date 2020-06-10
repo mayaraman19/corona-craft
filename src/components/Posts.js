@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom'
 //import dayjs from 'dayjs';
 //import relativeTime from 'dayjs/plugin/relativeTime';
 
@@ -42,6 +43,9 @@ const styles = {
         margin: 3,
     },
 }
+
+
+
 class Post extends Component
 {
     constructor(props) {
@@ -53,7 +57,13 @@ class Post extends Component
         }
     }
 
+    // onNavigateStatic = (title, description) => {
+    //     let history = useHistory();
+    //     history.push(`/Projects/proj/${title}/${description}`);
+    // }
+    
     render(){
+        
         //dayjs.extend(relativeTime);
         var token = localStorage.getItem('FBIdToken');
         var loggedin=localStorage.getItem('loggedin');
