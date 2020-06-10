@@ -11,6 +11,7 @@ import CreatePost from './components/CreatePost';
 import Baking from './components/Baking'
 import Masks from './components/Masks'
 import Gardening from './components/Gardening'
+import Other from './components/Other'
 
 import Login from './components/Login';
 import Signup from './components/Signup';
@@ -31,6 +32,7 @@ function App() {
                   <Route exact path="/Projects/Baking" component={Baking}/>
                   <Route exact path="/Projects/Masks" component={Masks}/>
                   <Route exact path="/Projects/Gardening" component={Gardening}/>
+                  <Route exact path="/Projects/Other" component={Other}/>
             </div>
           </div>
           <Route exact path="/About" component={About}/>

@@ -25,34 +25,37 @@ class Gardening extends React.Component{
         this.getData();
     }
     render() {
-        let gardProjs = this.state.posts.filter((val) => {
-            if(val.tag.toString().toLowerCase() == "gardening") return true;
+        let otherProjs = this.state.posts.filter((val) => {
+            if(val.tag.toString().toLowerCase() == "other") return true;
             else return false;
         })
-        if (gardProjs.length == 0) {
+        if (otherProjs.length == 0) {
             return (
                 <h3>
-                   Sorry, no gardening projects right now.
+                   Sorry, no other projects right now.
                </h3>
                
            );
         }
         else{
-        let Projs = gardProjs
-        ?(gardProjs.map((post) => (
+        let Projs = otherProjs
+        ?(otherProjs.map((post) => (
           <Post key={post.postId} post={post} />
         ))
         )
-        :<p>Sorry, no gardening projects right now.</p>
+        :<p style={{marginTop: 100}}>Sorry, no other projects right now.</p>
         return (
-        <Grid container spacing={1}>
+        <div>
+        <Grid container spacing={1} style={{backgroundColor: 'purple'}}>
             <Grid container item spacing={3}>
               {Projs}
             </Grid>
         </Grid>
+        </div>
         )
         }
     }
     
 }
+
 export default Gardening;

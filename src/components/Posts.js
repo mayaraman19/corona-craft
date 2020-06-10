@@ -72,7 +72,7 @@ class Post extends Component
           <p></p>
           <button  className={classes.vote} onClick={() => 
           {
-            if(loggedin=='true' && this.state.i<1)
+            if(token!=null && this.state.i<1)
             {this.setState({i:this.state.i+1})}
 
             axios.get(`https://us-central1-corona-craft-2dfcb.cloudfunctions.net/api/post/${postId}/upvote`, {
@@ -83,7 +83,7 @@ class Post extends Component
             <p className={classes.vote}>{voteCount+this.state.i}</p>
           <button className={classes.vote} onClick={() => 
           {
-            if(loggedin=='true' && this.state.i>-1)
+            if(token!=null && this.state.i>-1)
             {this.setState({i:this.state.i-1})}
             
             axios.get(`https://us-central1-corona-craft-2dfcb.cloudfunctions.net/api/post/${postId}/downvote`, {

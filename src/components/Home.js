@@ -47,7 +47,7 @@ class Home extends Component{
                     <Greeting/>
                 </div>
                 <div className='featured-content' 
-                style={{marginTop: 50, marginBottom: 30, height: 350, overflow: 'scroll'}}>
+                style={{marginTop: 50, marginBottom: 30, height: '100%', overflow: 'scroll'}}>
                     {projs}
                     <MiniProj title="Featured Posts" description="description"/>
                 </div>

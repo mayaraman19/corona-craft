@@ -1,6 +1,9 @@
 import React from 'react'
 import axios from 'axios'
 import MiniProj from './MiniProj.js'
+import Grid from '@material-ui/core/Grid';
+import Post from './Posts.js'
+
 
 class Masks extends React.Component {
     constructor(props) {
@@ -26,30 +29,31 @@ class Masks extends React.Component {
             if(val.tag.toString().toLowerCase() == "masks") return true;
             else return false;
         })
-        let projs = maskProjs.map((val, index) => {
-            return <MiniProj
-                key={index}
-                title={val.title}
-                description={val.body}
-                tag={val.tag}
-                />
-        });
-        console.log(projs);
-        if (projs.length == 0) {
+        if (maskProjs.length == 0) {
             return (
                 <h3>
-                    Sorry, no mask projects right now.
-                </h3>
-            );
+                   Sorry, no mask projects right now.
+               </h3>
+               
+           );
         }
-        else {
-            return (
-                <div style={{height: 500, overflow: 'scroll'}}>
-                    {projs}
-                </div>
-            );
+        else{
+        let Projs = maskProjs
+        ?(maskProjs.map((post) => (
+          <Post key={post.postId} post={post} />
+        ))
+        )
+        :<p>Sorry, no mask projects right now.</p>
+        return (
+        <Grid container spacing={1}>
+            <Grid container item spacing={3}>
+              {Projs}
+            </Grid>
+        </Grid>
+        )
         }
     }
+    
     
 }
 

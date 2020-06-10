@@ -4,6 +4,8 @@ import axios from 'axios'
 import MiniProj from './MiniProj';
 import ProjectsNavBar from './ProjectsNavBar.js'
 import Projects from './Projects';
+import Grid from '@material-ui/core/Grid';
+import Post from './Posts.js'
 
 class Baking extends React.Component{
     constructor(props) {
@@ -29,28 +31,30 @@ class Baking extends React.Component{
             if(val.tag.toString().toLowerCase() == "baking") return true;
             else return false;
         })
-        let projs = bakingProjs.map((val, index) => {
-            return <MiniProj
-                key={index}
-                title={val.title}
-                description={val.body}
-                tag={val.tag}
-                />
-        });
-        if (projs.length == 0) {
+        if (bakingProjs.length == 0) {
             return (
-                 <h3>
-                    Sorry, no baking projects right now.
-                </h3>
-                
-            );
+                <h3>
+                   Sorry, no baking projects right now.
+               </h3>
+               
+           );
         }
-        else {
+        else{
+            let Projs = bakingProjs
+            ?(bakingProjs.map((post) => (
+            <Post key={post.postId} post={post} />
+            ))
+            )
+            :<p>Sorry, no baking projects right now.</p>
             return (
-                <div style={{height: 500, overflow: 'scroll'}}>
-                    {projs}
-                </div>
-            );
+            <div>
+            <Grid container spacing={1}>
+                <Grid container item spacing={3}>
+                {Projs}
+                </Grid>
+            </Grid>
+            </div>
+        )
         }
     }
     
